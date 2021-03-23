@@ -1,4 +1,4 @@
-const text = "This is how you auto-write it!";
+const text = "This is how you auto-write it! 🏐 🏈";
 let index = 0;
 
 function autoWriteText() {
