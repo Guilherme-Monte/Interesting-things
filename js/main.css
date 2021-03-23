@@ -1,0 +1,22 @@
+@font-face {
+  font-family: RobotoMono;
+  src: url("../assets/RobotoMono-Bold.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+
+  background-color: #4a69bd; /*Azraq blue*/
+}
+
+* {
+  font-family: Roboto-Mono, monospace;
+}
