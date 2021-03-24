@@ -34,3 +34,10 @@ a:hover {
   color: #82ccdd; /* Spray */
   text-decoration: underline;
 }
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
