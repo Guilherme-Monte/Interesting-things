@@ -14,3 +14,4 @@ setInterval(autoWriteText, 150);
 // For typewriter effect:
 setInterval(autoWriteText, 250);
 // To write it only once, replace it with setTimeout
+// source: https://www.youtube.com/watch?v=8GPPJpiLqHk&list=WL&index=32&t=3271s&ab_channel=FlorinPop
