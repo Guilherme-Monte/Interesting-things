@@ -6,7 +6,6 @@ function autoWriteText() {
     text.slice(0, index);
 
   index++;
-  console.log(index);
   if (index > text.length) index = 0;
 }
 
@@ -15,3 +14,4 @@ setInterval(autoWriteText, 150);
 setInterval(autoWriteText, 250);
 // To write it only once, replace it with setTimeout
 // source: https://www.youtube.com/watch?v=8GPPJpiLqHk&list=WL&index=32&t=3271s&ab_channel=FlorinPop
+console.log(`%c Your text:%c Other text`, `font-weight: bold; font-size: 16px`, `font-weight: bold; font-size: 16px; color: green`)
