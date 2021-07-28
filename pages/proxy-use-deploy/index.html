@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Super Hero API Request</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+  <div id="root"></div>
+  <br />
+  <h1>Reminder: Check console</h1>
+  <script>
+    /*
+    Importante para gerar proxy quando precisar:
+    Note: if when you go to try to use https://cors-anywhere.herokuapp.com, you find it’s down, you can also easily deploy your own proxy to Heroku in literally just 2-3 minutes, with 5 commands:
+
+    git clone https://github.com/Rob--W/cors-anywhere.git
+    cd cors-anywhere/
+    npm install
+    heroku create
+    git push heroku master
+
+    The proxy makes the request to that site, gets the response, adds the Access-Control-Allow-Origin response header and any other CORS headers needed, then passes that back to your requesting code.
+    And that response with the Access-Control-Allow-Origin header added is what the browser sees, so the browser lets your frontend code actually access the response.
+    */
+
+    function status(res) {
+      if (res.status >= 200 && res.status < 300) {
+        return Promise.resolve(res)
+      } else {
+        return Promise.reject(new Error(res.statusText))
+      }
+    }
+
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    // You would substitute the "" with the proxyUrl constant
+    fetch("" + 'https://www.superheroapi.com/api.php/4645706468834592/70/powerstats', { method: 'get' })
+      .then(status)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        document.getElementById('root').innerHTML = `Id: ${data.id} <br/>`
+        document.getElementById('root').innerHTML += `Nome: ${data.name} <br/>`
+        document.getElementById('root').innerHTML += `Inteligência: ${data.intelligence} <br/>`
+        document.getElementById('root').innerHTML += `Combat: ${data.combat} <br/>`
+        document.getElementById('root').innerHTML += `Durabilidade: ${data.durability} <br/>`
+        document.getElementById('root').innerHTML += `Poder: ${data.power} <br/>`
+        document.getElementById('root').innerHTML += `Velocidade: ${data.speed} <br/>`
+        document.getElementById('root').innerHTML += `Força: ${data.strength} <br/>`
+      })
+      .catch(err => { console.log('Request failed', err) })
+
+    console.log("Importante para gerar proxy quando precisar: Note: if when you go to try to use https://cors-anywhere.herokuapp.com, you find it’s down, you can also easily deploy your own proxy to Heroku in literally just 2-3 minutes, with 5 commands:");
+
+    console.log("git clone https://github.com/Rob--W/cors-anywhere.git");
+    console.log("cd cors-anywhere/");
+    console.log("npm install");
+    console.log("heroku create");
+    console.log("git push heroku master");
+
+    console.log("The proxy makes the request to that site, gets the response, adds the Access-Control-Allow-Origin response header and any other CORS headers needed, then passes that back to your requesting code.");
+    console.log("And that response with the Access-Control-Allow-Origin header added is what the browser sees, so the browser lets your frontend code actually access the response.");
+  </script>
+</body>
+
+</html>
